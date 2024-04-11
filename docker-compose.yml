@@ -1,0 +1,15 @@
+version: "3.5"
+services:
+  # Web
+  web:
+    container_name: mywweb
+    build:
+      context: ./web/.
+      dockerfile: Dockerfile
+    ports:
+      - 2000:80
+    networks:
+      - pos
+networks:
+  pos:
+    driver: bridge
